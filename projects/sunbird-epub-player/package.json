@@ -8,7 +8,7 @@
     "@project-sunbird/sb-styles": ">=0.0.7"
   },
   "dependencies": {
-    "@project-sunbird/sunbird-player-sdk-v9": "5.1.0",
+    "@project-sunbird/sunbird-player-sdk-v9": "6.0.5",
     "tslib": "^2.0.0"
   },
   "homepage": "https://github.com/Sunbird-Knowlg/sunbird-epub-player/blob/release-5.5.0/README.md",
