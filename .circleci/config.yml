@@ -1,10 +1,19 @@
 version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.8
 jobs:
   build:
     working_directory: ~/sunbird-epub-player
     docker:
-     - image: circleci/node:16.13.1-browsers
+     - image: cimg/node:20.4.0-browsers
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install 
       - checkout:
           path: ~/sunbird-epub-player
       - run:
