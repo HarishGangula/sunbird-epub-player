@@ -24,7 +24,7 @@ jobs:
           command: cd projects/sunbird-epub-player &&  npm install --no-progress --legacy-peer-deps && npx audit-ci@^6 --config ./audit-ci.jsonc && rm -rf node_modules
       - run:
           name: Node install
-          command: npm install --no-progress --legacy-peer-deps
+          command: npm install --no-progress --force
       - run:
           name: Linting
           command: npm run lint
