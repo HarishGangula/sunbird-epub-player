@@ -7,6 +7,7 @@ import { EpubPlayerComponent } from './sunbird-epub-player.component';
 import { EpubPlayerService } from './sunbird-epub-player.service';
 import { epubPlayerConstants, telemetryType } from './sunbird-epub.constant';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { PLAYER_CONFIG } from '@project-sunbird/sunbird-player-sdk-v9';
 
 
 
@@ -20,7 +21,7 @@ describe('EpubPlayerComponent', () => {
       declarations: [EpubPlayerComponent],
       imports: [HttpClientTestingModule],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [ViwerService, EpubPlayerService]
+      providers: [ViwerService, EpubPlayerService, { provide: PLAYER_CONFIG, useValue: { contentCompatibilityLevel: 5 } }]
     })
       .compileComponents();
   }));
