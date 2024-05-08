@@ -82,18 +82,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "epubLibraryDemo:build"
+            "buildTarget": "epubLibraryDemo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "epubLibraryDemo:build:production"
+              "buildTarget": "epubLibraryDemo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "epubLibraryDemo:build"
+            "buildTarget": "epubLibraryDemo:build"
           }
         },
         "test": {
@@ -237,18 +237,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "epub-player-wc:build"
+            "buildTarget": "epub-player-wc:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "epub-player-wc:build:production"
+              "buildTarget": "epub-player-wc:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "epub-player-wc:build"
+            "buildTarget": "epub-player-wc:build"
           }
         },
         "test": {
