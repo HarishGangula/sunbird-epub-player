@@ -1,9 +1,9 @@
 name: Code Quality Checks
 
 on:
-  push:
-    tags:
-      - '*'
+  pull_request:
+    branches:
+      - '**'
 
 jobs:
   code-quality:
@@ -41,5 +41,5 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      # - name: Run test
-      #   run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - name: Run test
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
