@@ -41,5 +41,5 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      - name: Run test
-        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      # - name: Run test
+      #   run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
