@@ -43,4 +43,4 @@ jobs:
         run: |
           npm run build-lib && npm pack ./dist/sunbird-epub-player
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          npm publish project-sunbird-sunbird-epub-player-v9-*
+          npm publish project-sunbird-sunbird-epub-player-v9-* --access public
