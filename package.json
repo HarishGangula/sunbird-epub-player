@@ -12,6 +12,7 @@
     "link-player": "cd dist/sunbird-epub-player && npm link && cd ../.. && npm link @project-sunbird/sunbird-epub-player-v9",
     "build-lib-link": "npm run build-lib && npm run link-player",
     "lib-test": "ng test sunbird-epub-player",
+    "lint:fix": "ng lint --fix",
     "mybuild": "npm run build",
     "serve": "node assets-copy.js && npm link ./dist/sunbird-epub-player && ng serve",
     "build-web-component": "npm run build-lib && ng build epub-player-wc --output-hashing none && node ./build-wc.js",
