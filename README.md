@@ -340,3 +340,47 @@ Click to see the input data - [playerConfig](README.md#step-5-send-input-to-rend
 
 Click to see the sample code - [sampleCode](https://github.com/Sunbird-Ed/SunbirdEd-mobile-app/blob/release-4.8.0/src/app/player/player.page.html)
 <br /><br />
+
+## Code Quality
+
+The project maintains code quality through automated checks that run on every pull request:
+
+1. **Linting**
+   - ESLint for code style and quality
+   - Command: `npm run lint`
+
+2. **Dependencies**
+   - Uses `npm ci --legacy-peer-deps` for deterministic installations
+   - GitHub Actions cache for faster builds
+
+3. **Code Formatting**
+   - Ensures consistent code formatting
+   - Can be automatically fixed using `npm run lint:fix`
+
+4. **Testing**
+   - Unit tests using Karma
+   - Command: `npm run test`
+
+These checks ensure consistent code style, secure dependency management, and reliable testing.
+
+## Release Process
+
+Release Process for Sunbird EPUB Player - This GitHub Actions workflow automatically publishes the Sunbird EPUB Player web component to NPM whenever a new tag is pushed. The following steps describe the workflow file:
+
+- Checks out the repository code
+- Sets up Node.js
+- Manages dependency caching to speed up builds
+- Installs dependencies
+- Builds the web component
+- Packages and publishes it to NPM
+- Prerequisites - set the `NPM_TOKEN` in the repository secrets
+
+1. **Web Component Publishing:**:
+   - Builds the web component using `npm run build-web-component`
+   - Packages it with specific version from package.json
+   - Publishes to NPM as @project-sunbird/sunbird-epub-player-web-component
+
+2. **Module Publishing:**
+   - Builds the main module using `npm run build-lib`
+   - Packages it with specific version from package.json
+   - Publishes to NPM as @project-sunbird/sunbird-epub-player
