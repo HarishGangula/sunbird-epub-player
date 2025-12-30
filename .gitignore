@@ -35,6 +35,7 @@ speed-measure-plugin*.json
 .history/*
 
 # misc
+/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -47,3 +48,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+project-sunbird-sunbird-epub-player-web-component-1.0.1.tgz
+
+.nx

@@ -1,20 +1,20 @@
 {
   "name": "@project-sunbird/sunbird-epub-player-v9",
-  "version": "5.2.1",
+  "version": "8.0.0",
   "peerDependencies": {
-    "@angular/common": ">=12.2.16",
-    "@angular/core": ">=12.2.16",
+    "@angular/common": "17.3.7",
+    "@angular/core": "17.3.7",
     "@project-sunbird/client-services": ">=3.4.8",
     "@project-sunbird/sb-styles": ">=0.0.7"
   },
   "dependencies": {
-    "@project-sunbird/sunbird-player-sdk-v9": "5.1.0",
+    "@project-sunbird/sunbird-player-sdk-v9": "6.0.7",
     "tslib": "^2.0.0"
   },
-  "homepage": "https://github.com/project-sunbird/sunbird-epub-player/blob/release-4.8.0/README.md",
+  "homepage": "https://github.com/Sunbird-Knowlg/sunbird-epub-player/blob/release-5.5.0/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/project-sunbird/sunbird-epub-player.git"
+    "url": "https://github.com/Sunbird-Knowlg/sunbird-epub-player.git"
   },
   "keywords": [
     "sunbird",

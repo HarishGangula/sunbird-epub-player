@@ -82,18 +82,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "epubLibraryDemo:build"
+            "buildTarget": "epubLibraryDemo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "epubLibraryDemo:build:production"
+              "buildTarget": "epubLibraryDemo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "epubLibraryDemo:build"
+            "buildTarget": "epubLibraryDemo:build"
           }
         },
         "test": {
@@ -111,19 +111,6 @@
               "src/styles.css"
             ],
             "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         },
         "e2e": {
@@ -162,14 +149,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/sunbird-epub-player/tsconfig.lib.json",
-              "projects/sunbird-epub-player/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/sunbird-epub-player/**/*.ts",
+              "projects/sunbird-epub-player/**/*.html"
             ]
           }
         }
@@ -208,6 +192,7 @@
               "projects/epub-player-wc/src/styles.scss"
             ],
             "scripts": [
+              "node_modules/reflect-metadata/Reflect.js",
               "node_modules/epubjs/dist/epub.js",
               "node_modules/@project-sunbird/telemetry-sdk/index.js"
             ],
@@ -252,18 +237,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "epub-player-wc:build"
+            "buildTarget": "epub-player-wc:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "epub-player-wc:build:production"
+              "buildTarget": "epub-player-wc:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "epub-player-wc:build"
+            "buildTarget": "epub-player-wc:build"
           }
         },
         "test": {
@@ -283,19 +268,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/epub-player-wc/tsconfig.app.json",
-              "projects/epub-player-wc/tsconfig.spec.json",
-              "projects/epub-player-wc/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -307,12 +279,23 @@
               "devServerTarget": "epub-player-wc:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/epub-player-wc/**/*.ts",
+              "projects/epub-player-wc/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "epubLibraryDemo",
   "cli": {
-    "analytics": "046d8ea0-5449-43cc-8765-5cac511860c3"
+    "analytics": "046d8ea0-5449-43cc-8765-5cac511860c3",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

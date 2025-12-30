@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 (async () => {
     try {
-      var source = "projects/sunbird-epub-player/node_modules/@project-sunbird/sunbird-player-sdk-v9/lib/assets";
+      var source = "node_modules/@project-sunbird/sunbird-player-sdk-v9/lib/assets";
         const dest = "dist/sunbird-epub-player/lib/assets/";
         const isAssetsExists = await fs.pathExists(dest)
 

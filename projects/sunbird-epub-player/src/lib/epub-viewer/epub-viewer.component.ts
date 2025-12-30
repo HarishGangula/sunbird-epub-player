@@ -8,7 +8,7 @@ import { UtilService } from '../services/utilService/util.service';
 
 const MAX_TIME_TO_LOAD_SPINE = 5 * 60 * 1000; // 5 minutes
 @Component({
-  // tslint:disable-next-line:component-selector
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'epub-viewer',
   templateUrl: './epub-viewer.component.html',
   styleUrls: ['./epub-viewer.component.css']

@@ -4,7 +4,7 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": [
+  "allowedNonPeerDependencies": [
     "@project-sunbird/sunbird-player-sdk-v9"
   ]
 }
