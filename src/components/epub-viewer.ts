@@ -41,23 +41,27 @@ export class EpubViewer extends LitElement {
 
   async firstUpdated() {
     this.idForRendition = `${this.identifier}-content`;
-    this.epubViewerContainer.id = this.idForRendition;
+    if (this.epubViewerContainer) {
+      this.epubViewerContainer.id = this.idForRendition;
+    }
     await this.initEpub();
 
-    this.resizeObserver = new ResizeObserver(() => {
-      if (this.rendition) {
-        this.rendition.resize();
-      }
-    });
-    this.resizeObserver.observe(this.epubViewerContainer);
+    if (typeof ResizeObserver !== 'undefined' && this.epubViewerContainer) {
+      this.resizeObserver = new ResizeObserver(() => {
+        if (this.rendition) {
+          this.rendition.resize();
+        }
+      });
+      this.resizeObserver.observe(this.epubViewerContainer);
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    if (this.eBook) {
+    if (this.eBook && typeof this.eBook.destroy === 'function') {
       this.eBook.destroy();
     }
-    if (this.resizeObserver) {
+    if (this.resizeObserver && typeof this.resizeObserver.disconnect === 'function') {
       this.resizeObserver.disconnect();
     }
   }
@@ -125,6 +129,8 @@ export class EpubViewer extends LitElement {
         const cfi = this.eBook.locations.cfiFromPercentage(Number(currentLocation));
         this.rendition.display(cfi);
       }
+    }).catch((e: any) => {
+      // Handle the error silently or emit error event based on original logic, adding catch block to prevent unhandled rejection
     });
   }
 

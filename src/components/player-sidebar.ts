@@ -119,11 +119,11 @@ export class PlayerSidebar extends LitElement {
           <button class="close-btn" @click="${this.toggleSidebar}">&times;</button>
         </div>
 
-        ${this.config?.showShare ? html`<div class="menu-item" @click="${() => this.handleAction('SHARE')}">Share</div>` : ''}
-        ${this.config?.showDownload ? html`<div class="menu-item" @click="${() => this.handleAction('DOWNLOAD')}">Download</div>` : ''}
-        ${this.config?.showReplay ? html`<div class="menu-item" @click="${() => this.handleAction('REPLAY')}">Replay</div>` : ''}
-        ${this.config?.showExit ? html`<div class="menu-item" @click="${() => this.handleAction('EXIT')}">Exit</div>` : ''}
-        ${this.config?.showPrint ? html`<div class="menu-item" @click="${() => this.handleAction('PRINT')}">Print</div>` : ''}
+        ${this.config && this.config.showShare ? html`<div class="menu-item" @click="${() => this.handleAction('SHARE')}">Share</div>` : ''}
+        ${this.config && this.config.showDownload ? html`<div class="menu-item" @click="${() => this.handleAction('DOWNLOAD')}">Download</div>` : ''}
+        ${this.config && this.config.showReplay ? html`<div class="menu-item" @click="${() => this.handleAction('REPLAY')}">Replay</div>` : ''}
+        ${this.config && this.config.showExit ? html`<div class="menu-item" @click="${() => this.handleAction('EXIT')}">Exit</div>` : ''}
+        ${this.config && this.config.showPrint ? html`<div class="menu-item" @click="${() => this.handleAction('PRINT')}">Print</div>` : ''}
       </div>
     `;
   }
