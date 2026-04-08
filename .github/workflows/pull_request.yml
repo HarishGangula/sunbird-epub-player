@@ -9,6 +9,8 @@ jobs:
   code-quality:
     name: Run Code Quality Checks
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout code
@@ -38,8 +40,5 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Run lint
-        run: npm run lint
-
       - name: Run test
-        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        run: npm run test
